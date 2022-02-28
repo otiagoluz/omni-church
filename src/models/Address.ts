@@ -33,9 +33,6 @@ class Address extends Model {
   @AllowNull(true)
   @Column(DataType.STRING)
   state: string;
-
-  @BelongsTo(() => Church)
-  church: Church
 }
 
 export default Address;

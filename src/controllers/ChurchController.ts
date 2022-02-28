@@ -28,8 +28,8 @@ const ChurchController = {
 
   async delete(req: Request, res: Response) {
     const id = req.params?.id;
-    const user = await User.destroy({ where: {id}})
-    return res.json(user);
+    const church = await Church.destroy({ where: {id} })
+    return res.json(church);
   }
 
 }
