@@ -1,4 +1,4 @@
-import { Model, DataType, Table, Column, AllowNull, BelongsTo, ForeignKey } from 'sequelize-typescript';
+import { Model, DataType, Table, Column, AllowNull, ForeignKey } from 'sequelize-typescript';
 import Church from './Church';
 
 @Table
