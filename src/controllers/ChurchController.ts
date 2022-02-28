@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import Address from "../models/Address";
 import Church from "../models/Church";
-import User from "../models/UserMaster";
 
 const ChurchController = {
   async store(req: Request, res: Response) {
@@ -30,7 +29,20 @@ const ChurchController = {
     const id = req.params?.id;
     const church = await Church.destroy({ where: {id} })
     return res.json(church);
-  }
+  },
+
+  async update(req: Request, res: Response) {
+    const id = parseInt(req.params?.id);
+    const { name, email, cnpj, phone, address } = req.body;
+    try {
+      await Church.update({ name, email, cnpj, phone, address }, { where: { id }})
+      return res.json(await Church.findByPk(id));
+    }
+    catch (err) { 
+      console.log(err);
+      return res.status(200).json({ error: err })
+    }
+  },
 
 }
 

@@ -19,5 +19,6 @@ routes.delete('/users/:id', UserMasterController.delete);
 routes.get('/churches', ChurchController.index);
 routes.post('/churches', ChurchController.store);
 routes.get('/churches/:id', ChurchController.byId);
+routes.put('/churches/:id', ChurchController.update);
 
 export default routes;
