@@ -1,7 +1,8 @@
-import { Model, DataType, Table, Column, AllowNull } from 'sequelize-typescript';
+import { Model, DataType, Table, Column, AllowNull, HasOne } from 'sequelize-typescript';
+import Address from './Address';
 
 @Table
-class User extends Model {
+class Church extends Model {
   id?: number;
 
   @AllowNull(false)
@@ -14,11 +15,14 @@ class User extends Model {
 
   @AllowNull(false)
   @Column(DataType.STRING)
-  password: string;
+  cnpj: string;
 
   @AllowNull(true)
   @Column(DataType.STRING)
   phone: string;
+
+  @HasOne(() => Address, 'church_id')
+  address: Address
 }
 
-export default User;
+export default Church;

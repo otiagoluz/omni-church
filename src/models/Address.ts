@@ -1,22 +1,41 @@
-import { Model, DataType, Table, Column, AllowNull } from 'sequelize-typescript';
+import { Model, DataType, Table, Column, AllowNull, BelongsTo, ForeignKey } from 'sequelize-typescript';
+import Church from './Church';
 
 @Table
-class User extends Model {
-  @AllowNull(false)
-  @Column(DataType.STRING)
-  name: string;
+class Address extends Model {  
+  @ForeignKey(() => Church)
+  church_id?: number
 
   @AllowNull(false)
   @Column(DataType.STRING)
-  email: string;
+  street: string;
 
   @AllowNull(false)
   @Column(DataType.STRING)
-  password: string;
+  number: string;
 
   @AllowNull(true)
   @Column(DataType.STRING)
-  phone: string;
+  apartment: string;
+
+  @AllowNull(true)
+  @Column(DataType.STRING)
+  zip_code: string;
+  
+  @AllowNull(true)
+  @Column(DataType.STRING)
+  district: string;
+
+  @AllowNull(true)
+  @Column(DataType.STRING)
+  city: string;
+
+  @AllowNull(true)
+  @Column(DataType.STRING)
+  state: string;
+
+  @BelongsTo(() => Church)
+  church: Church
 }
 
-export default User;
+export default Address;

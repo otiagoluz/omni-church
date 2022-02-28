@@ -9,13 +9,6 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      user_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'users', key: 'id'},
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      },
       street: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -43,6 +36,10 @@ module.exports = {
       state: {
         type: Sequelize.STRING,
         allowNull: false,
+      },
+      church_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
       },
       created_at: {
         type: Sequelize.DATE,
