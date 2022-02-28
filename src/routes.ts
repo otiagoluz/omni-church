@@ -10,9 +10,10 @@ routes.get('/', (req: Request, res: Response) => {
 })
 
 routes.get('/users', UserMasterController.index);
-routes.get('/users/:id', UserMasterController.byId);
-routes.delete('/users/:id', UserMasterController.delete);
 routes.post('/users', UserMasterController.store);
+routes.get('/users/:id', UserMasterController.byId);
+routes.put('/users/:id', UserMasterController.update);
+routes.delete('/users/:id', UserMasterController.delete);
 
 
 routes.get('/churches', ChurchController.index);
