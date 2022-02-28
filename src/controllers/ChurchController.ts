@@ -22,7 +22,7 @@ const ChurchController = {
 
   async byId(req: Request, res: Response) {
     const id = req.params?.id;
-    const church = await Church.findByPk(id, { include: [Address]});
+    const church = await Church.findByPk(id, { include: [Address] });
     return res.json(church);
   },
 
