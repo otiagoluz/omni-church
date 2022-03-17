@@ -2,51 +2,43 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('addresses', { 
+    return queryInterface.createTable('members', { 
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
-      street: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      number: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      apartment: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      zip_code: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      district: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      city: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      state: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      church_id: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
       congregation_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      email: {
+        type: Sequelize.STRING,
         allowNull: true,
       },
-      member_id: {
-        type: Sequelize.INTEGER,
+      born_date: {
+        type: Sequelize.DATE,
+        allowNull: true,
+      },
+      baptism_date: {
+        type: Sequelize.DATE,
+        allowNull: true,
+      },
+      phone: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      civil_state: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      spouse_name: {
+        type: Sequelize.STRING,
         allowNull: true,
       },
       created_at: {
@@ -60,6 +52,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('addresses');
+    return queryInterface.dropTable('members');
   }
 };

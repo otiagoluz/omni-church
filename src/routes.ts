@@ -15,7 +15,6 @@ routes.get('/users/:id', UserMasterController.byId);
 routes.put('/users/:id', UserMasterController.update);
 routes.delete('/users/:id', UserMasterController.delete);
 
-
 routes.get('/churches', ChurchController.index);
 routes.post('/churches', ChurchController.store);
 routes.get('/churches/:id', ChurchController.byId);
