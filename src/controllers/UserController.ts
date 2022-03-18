@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import User from "../models/UserMaster";
+import User from "../models/User";
 
-const UserMasterController = {
+const UserController = {
   async index(req: Request, res: Response) {
    const users = await User.findAll();
    return res.json(users);
@@ -39,7 +39,7 @@ const UserMasterController = {
   }
 }
 
-export default UserMasterController;
+export default UserController;
 
 
 

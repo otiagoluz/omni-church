@@ -1,4 +1,5 @@
 import { Model, DataType, Table, Column, AllowNull } from 'sequelize-typescript';
+import * as bcrypt from "bcryptjs";
 
 @Table
 class User extends Model {
@@ -19,6 +20,15 @@ class User extends Model {
   @AllowNull(true)
   @Column(DataType.STRING)
   phone: string;
+
+
+  hashPassword() {
+    this.password = bcrypt.hashSync(this.password, 8);
+  }
+
+  checkIfUnEncryptedPasswordIsValid(unEncryptedPassword: string) {
+    return bcrypt.compareSync(unEncryptedPassword, this.password);
+  }
 }
 
 export default User;

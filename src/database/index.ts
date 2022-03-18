@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize-typescript'
-import User from '../models/UserMaster';
+import User from '../models/User';
 import * as dotenv from "dotenv";
 import Church from '../models/Church';
 import Address from '../models/Address';
