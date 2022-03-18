@@ -21,10 +21,6 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-      number: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
       member_id:{
         type: Sequelize.INTEGER,
         allowNull: true,
