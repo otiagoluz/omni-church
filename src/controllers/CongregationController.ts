@@ -51,10 +51,6 @@ const CongregationController = {
       return res.status(500).json({ error: err })
     }
   }
-
 }
 
 export default CongregationController;
-
-
-
