@@ -16,9 +16,7 @@ class Congregation extends Model {
   is_sector_head: boolean;
 
   @ForeignKey(() => Sector)
-  @AllowNull(false)
-  @Column(DataType.NUMBER)
-  sector_id: number;
+  sector_id?: number
 
   @BelongsTo(() => Member, 'id')
   member_leader: Member
@@ -27,7 +25,7 @@ class Congregation extends Model {
   address: Address;
 
   @HasMany(() => Member, 'id')
-  members: Member[]
+  members: Member[];
 }
 
 export default Congregation;

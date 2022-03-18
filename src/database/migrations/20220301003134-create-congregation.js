@@ -18,7 +18,7 @@ module.exports = {
         allowNull: false
       },
       sector_id: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       member_id:{

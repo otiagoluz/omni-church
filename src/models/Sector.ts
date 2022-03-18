@@ -1,4 +1,4 @@
-import { Model, DataType, Table, Column, AllowNull, HasOne, BelongsTo } from 'sequelize-typescript';
+import { Model, DataType, Table, Column, AllowNull, HasOne, BelongsTo, HasMany } from 'sequelize-typescript';
 import Congregation from './Congregation';
 import Member from './Member';
 
@@ -15,7 +15,10 @@ class Sector extends Model {
   number?: number;
 
   @BelongsTo(() => Member, 'id')
-  member_leader?: Member
+  member_leader?: Member;
+
+  @HasMany(() => Congregation, 'sector_id')
+  congregations: Congregation[];
 }
 
 export default Sector;

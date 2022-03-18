@@ -1,10 +1,14 @@
 import { Model, DataType, Table, Column, AllowNull, ForeignKey } from 'sequelize-typescript';
 import Church from './Church';
+import Congregation from './Congregation';
 
 @Table
 class Address extends Model {  
   @ForeignKey(() => Church)
-  church_id?: number
+  church_id?: number;
+
+  @ForeignKey(() => Congregation)
+  congregation_id?: number;
 
   @AllowNull(false)
   @Column(DataType.STRING)

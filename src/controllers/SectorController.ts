@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import Address from "../models/Address";
+import Congregation from "../models/Congregation";
 import Sector from "../models/Sector";
 
 const SectorController = {
@@ -20,7 +22,7 @@ const SectorController = {
 
   async byId(req: Request, res: Response): Promise<any> {
     const id = req.params?.id;
-    const sector = await Sector.findByPk(id);
+    const sector = await Sector.findByPk(id, { include: { model: Congregation, include: [Address] }});
     return res.json(sector);
   },
 

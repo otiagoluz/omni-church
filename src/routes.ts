@@ -1,6 +1,7 @@
 import express from 'express';
 import { Request, Response} from 'express'
 import ChurchController from './controllers/ChurchController';
+import CongregationController from './controllers/CongregationController';
 import SectorController from './controllers/SectorController';
 import  UserMasterController from './controllers/UserMasterController';
 
@@ -30,5 +31,11 @@ routes.get('/sectors/:id', SectorController.byId);
 routes.put('/sectors/:id', SectorController.update);
 routes.delete('/sectors/:id', SectorController.delete);
 
+// Congregations
+routes.post('/congregations', CongregationController.store);
+routes.get('/congregations', CongregationController.index);
+routes.get('/congregations/:id', CongregationController.byId);
+routes.put('/congregations/:id', CongregationController.update);
+routes.delete('/congregations/:id', CongregationController.delete);
 
 export default routes;
