@@ -34,8 +34,5 @@
     "sequelize-cli": "^6.4.1",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.5"
-  },
-  "engines": {
-    "node": "12.16.3"
   }
 }

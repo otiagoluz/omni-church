@@ -6,7 +6,7 @@ import Address from '../models/Address';
 import Sector from '../models/Sector';
 import Member from '../models/Member';
 import Congregation from '../models/Congregation';
-const dbConfig = require('../config/database');
+const dbConfig = require('../teste/database');
 
 dotenv.config();
 
