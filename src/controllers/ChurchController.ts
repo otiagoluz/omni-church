@@ -28,7 +28,7 @@ const ChurchController = {
   async delete(req: Request, res: Response): Promise<any> {
     const id = req.params?.id;
     await Church.destroy({ where: {id} }).then(() => 
-      res.json({ message: 'Church deleted with success' })
+      res.json({ message: 'Church deleted with success!' })
     )
   },
 
