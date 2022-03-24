@@ -34,7 +34,6 @@ const ChurchController = {
   async update(req: Request, res: Response): Promise<any> {
     const id = parseInt(req.params?.id);
     const { name, email, cnpj, phone, address } = req.body;
-    console.log({name, email, cnpj, phone, address});
     try {
       await Church.update({ name, email, cnpj, phone }, { where: { id }}).then(() => {
         Church.findByPk(id, { include: [Address] }).then((church) => {
@@ -44,7 +43,6 @@ const ChurchController = {
         })
       }).finally(() => Church.findByPk(id, { include: [Address] }).then((church) => res.json(church)))
     }
-
     catch (err) { 
       console.log(err);
       return res.status(500).json({ error: err })
