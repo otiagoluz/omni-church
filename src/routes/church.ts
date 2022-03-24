@@ -7,6 +7,6 @@ router.get('/', ChurchController.index);
 router.post('/', ChurchController.store);
 router.get('/:id([0-9]+)', ChurchController.byId);
 router.patch('/:id([0-9]+)', ChurchController.update);
-router.patch('/:id([0-9]+)', ChurchController.delete);
+router.delete('/:id([0-9]+)', ChurchController.delete);
 
 export default router;
